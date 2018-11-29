@@ -63,7 +63,7 @@ namespace SD_SemWithSyhov
         {
             Student s = _cont.StudentSet.Find(dgvStudent.SelectedRows[0].Cells[0].Value);
 
-            _cont.StudentSet.Remove(s);
+            if (s != null) _cont.StudentSet.Remove(s);
             _cont.SaveChanges();
 
             RefreshDgvStudent();
@@ -180,7 +180,7 @@ namespace SD_SemWithSyhov
         {
             Teacher t = _cont.TeacherSet.Find(dgvTeacher.SelectedRows[0].Cells[0].Value);
 
-            _cont.TeacherSet.Remove(t);
+            if (t != null) _cont.TeacherSet.Remove(t);
             _cont.SaveChanges();
 
             RefreshDgvTeacher();
@@ -193,7 +193,7 @@ namespace SD_SemWithSyhov
         {
             CourseWork cw = _cont.CourseWorkSet.Find(dgvCW.SelectedRows[0].Cells[0].Value);
 
-            _cont.CourseWorkSet.Remove(cw);
+            if (cw != null) _cont.CourseWorkSet.Remove(cw);
             _cont.SaveChanges();
 
             RefreshDgvCW();
