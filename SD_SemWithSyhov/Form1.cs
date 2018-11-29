@@ -114,6 +114,9 @@ namespace SD_SemWithSyhov
             dgvCW.Columns[0].Visible = false;
         }
 
+        /// <summary>
+        /// Добавление преподавателя
+        /// </summary>
         private void btnTeacherAdd_Click(object sender, EventArgs e)
         {
             if (tbTeacherName.Text.Trim(' ') == "" || cbTeacherPost.SelectedIndex == -1)
@@ -137,6 +140,9 @@ namespace SD_SemWithSyhov
             RefreshDgvTeacher();
         }
 
+        /// <summary>
+        /// Добавление курсовой работы
+        /// </summary>
         private void btnCWAdd_Click(object sender, EventArgs e)
         {
             if (tbCWTitle.Text.Trim(' ') == "" || cbCWCourse.SelectedIndex == -1 || cbCWMark.SelectedIndex == -1 ||
@@ -167,6 +173,9 @@ namespace SD_SemWithSyhov
             RefreshDgvCW();
         }
 
+        /// <summary>
+        /// Удаление преподавателя
+        /// </summary>
         private void btnTeacherDelete_Click(object sender, EventArgs e)
         {
             Teacher t = _cont.TeacherSet.Find(dgvTeacher.SelectedRows[0].Cells[0].Value);
@@ -177,6 +186,9 @@ namespace SD_SemWithSyhov
             RefreshDgvTeacher();
         }
 
+        /// <summary>
+        /// Удаление курсовой работы
+        /// </summary>
         private void btnCWDelete_Click(object sender, EventArgs e)
         {
             CourseWork cw = _cont.CourseWorkSet.Find(dgvCW.SelectedRows[0].Cells[0].Value);
